@@ -34,11 +34,8 @@ $finalY =[];
     //         $finalX[]=$hasilX[$x];
     //         $finalY[]=$hasilY[$x];
     //     }else if($hasilX[$x]!=$hasilX[$x+1]){
-    //         $check1 =$hasilY[$x]-$hasilY[$x+1];
-    //         if($check1==0 || $check1==1 || $check1==-1){
     //             $finalX[]=$hasilX[$x];
     //             $finalY[]=$hasilY[$x];
-    //         }
 
     //     }else if($x==6){
     //         break;
@@ -58,17 +55,12 @@ $finalY =[];
     //ini jika bidak 1 di bandingkan dengan semua bidak terlebih dahulu
     for($x=0;$x<=7;$x++){
         for($y=$x+1;$y<=7;$y++){
-            if($hasilY[$x]==$hasilY[$y]){
+            if($hasilY[$x]==$hasilY[$y] && $hasilX[$x]!=$hasilX[$y]){
                 $finalX[]=$hasilX[$y];
                 $finalY[]=$hasilY[$y];
-            }else if($hasilX[$x]==$hasilX[$y]){
-                $check1 =$hasilY[$x]-$hasilY[$y];
-                if($check1==0 || $check1==1 || $check1==-1){
-                    $finalX[]=$hasilX[$y];
-                    $finalY[]=$hasilY[$y];
-                }else{
-                    continue 2;
-                }
+            }else if($hasilX[$x]==$hasilX[$y] && $hasilY[$x]!=$hasilY[$y]){
+                $finalX[]=$hasilX[$y];
+                $finalY[]=$hasilY[$y];
     
             }
         }
